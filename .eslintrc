@@ -1,0 +1,38 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+
+  "extends": [
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "importOrder": [
+          "^(assert|buffer|child_process|cluster|crypto|dgram|dns|domain|events|fs|http|https|net|os|path|punycode|querystring|readline|stream|string_decoder|timers|tls|tty|url|util|v8|vm|zlib)$",
+          "^@k9/(.*)$",
+          "^@(.*)$",
+          "config$",
+          "\/constants\/",
+          "^react(-dom)?$",
+          "^[./]"
+        ],
+        "importOrderSeparation": true,
+        "semi": false,
+        "singleQuote": true,
+        "printWidth": 80
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "no-console": "off"
+  }
+}
